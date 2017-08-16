@@ -1,0 +1,60 @@
+<script>
+
+  
+  $(document).on('turbolinks:load', function() {
+
+   // Fade in the word Everyday 
+     $("#sect1b").hide().fadeIn(2000);
+
+ 
+   // Slide in Hello World!
+     $(".sect1a").animate({left: '250px'}, 1500);
+    
+   // Click button to hide everything   
+    $("#hide").click(function(){
+        $("p").hide(1000);
+    });
+
+    // Click button to show everything
+    $("#show").click(function(){
+        $("p").show(1000);
+    });
+
+     // Year calculation in the footer
+    var d = new Date();
+    document.getElementById("yr").innerHTML = d.getFullYear();
+
+   });
+
+
+</script> 
+
+<body>
+<div class="main">
+  <div class="container">
+    <h1>Hello my name is Brad Beiermann</h1>
+    <p>I make Rails apps.</p>
+	<br>
+    <div id="sect1b">
+      <p>Everyday</p>
+    </div>
+    <br>
+    
+    <div class="sect1a">Hello World!
+    </div>    
+    <br>
+
+    <br>
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    <br>
+    <div style="width:100%; height:50px;"><br><p>The date is <span id="yr"></span></p>
+    </div> 
+     <br>
+     <br>
+    <%= link_to "My Blog", posts_path %>
+
+  </div>
+
+</div>
+</body>
